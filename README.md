@@ -14,7 +14,7 @@ Stack 版本，Fiber 版本正在进行中。**
 
 我们将在这里进行 React 版本相关的讨论，目前有正在使用的 Stack reconciler 版本，以及使用 Fiber 的下个版本（你可能知道下个版本的 React
 即将发布），所以你可以很好的了解 React 的工作原理，以及欣赏 React-Fiber 的伟大成就。我们将使用 React v15.4.2
-版本来解释旧 React 的工作原理，‘Fiber’ 版本则使用 React v16.*.*** 版本。让我们开始旧 Stack 版本之旅。
+版本来解释旧 React 的工作原理，‘Fiber’ 版本则使用 React v16.\*.\*\*\* 版本。让我们开始旧 Stack 版本之旅。
 
 
 ## Stack reconciler
