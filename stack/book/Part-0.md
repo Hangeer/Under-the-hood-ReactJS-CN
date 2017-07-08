@@ -6,13 +6,22 @@
 
 ### ReactDOM.render
 Alright, let’s start with a call of ReactDOM.render.
+好的，让我们从调用 ReactDOM.render 开始
 
 The entry point is ReactDom.render, our app is started rendering into DOM from here. I created simple component `<ExampleApplication/>` to debug easier. So, the first thing which happens is **JSX will be transformed into React elements**. They are pretty simple, almost plain objects with a simple structure. They just represent what was returned from component’s render, nothing more. Some fields are already familiar for you, fields like props, key, ref. Property type refers to markup object described by JSX. So, in our case, it’s class `ExampleApplication`, but it also can be just string ‘button’ for Button tag etc. Also, during React element creation React will merge `defaultProps` with props (if they were specified) and validate propTypes. Check source code for more details
 (`src\isomorphic\classic\element\ReactElement.js`)
+切入点是 ReactDOM.render，我们的应用从这里开始渲染 DOM。我创建了一个简单的组件
+`<ExampleApplication/>`。所以，第一个问题是，**从 JSX 怎么转换到 React
+element**。这很简单，几乎都是结构简单的对象。它们只是表示从组件的渲染返回什么内容，没有其他东西。某些字段你可能已经非常熟悉了，像是
+props, key, ref。属性类型是指由 JSX 描述的标记对象。所以在我们的例子中，它是 ExampleApplication
+类型，但它也可以是按钮标签中的字符串 ‘button’。此外，在创建 React element 的过程中将会合并 `defaultProps` 与
+`props`，并验证 PropTypes。更多详细内容让我们来看看源码。(`src\isomorphic\classic\element\ReactElement.js`)
 
 ### ReactMount
 You can see the module called `ReactMount` (01), it contains the logic of components mounting. Actually, there is no logic inside `ReactDOM`, it is just an interface to work with `ReactMount`, so when you call `ReactDOM.render` you technically call `ReactMount.render`. What is all that mounting about?
 > Mounting is the process of initializing a React component by creating its representative DOM elements and inserting them into a supplied `container`.
+你可以看到一个叫 `ReactMount` 的模块，它包括组件挂载相关的逻辑。实际上，`ReactDOM` 中并没有挂载相关的逻辑，它只是一个使用
+`ReatMount` 的入口。
 
 At least the comment from the code describes it in that way. Well, what that really means? Alright, imagine the next transformation:
 
